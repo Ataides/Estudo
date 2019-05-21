@@ -1,0 +1,64 @@
+﻿@model Introducao.Models.UsuarioModels
+
+@{
+    ViewBag.Title = "ResultadoUsuario";
+}
+
+<h2>Resultado Usuario</h2>
+
+<div>
+    <b>@Html.LabelFor(x => x.PessoaId)</b>
+</div>
+<div>
+    @Model.PessoaId
+</div>
+<div>
+    <b>@Html.LabelFor(x => x.Nome)</b>
+</div>
+<div>
+    @Model.Nome
+</div>
+<div>
+    <b>@Html.LabelFor(x => x.Tipo)</b>
+</div>
+<div>
+    @Model.Tipo
+</div>
+
+<div>
+    <b>@Html.LabelFor(x => x.Observacoes)</b>
+</div>
+<div>
+    @Model.Observacoes
+</div>
+
+<div>
+    <b>@Html.LabelFor(x => x.Idade)</b>
+</div>
+<div>
+    @Model.Idade
+</div>
+
+<div>
+    <b>@Html.DisplayNameFor(x => x.Email)</b>
+</div>
+<div>
+    @Html.DisplayFor(x => x.Email)
+</div>
+
+<div>
+    <b>@Html.LabelFor(x => x.Login)</b>
+</div>
+<div>
+    @Model.Login
+</div>
+
+<div>
+    <b>@Html.LabelFor(x => x.Senha)</b>
+</div>
+<div>
+    @Model.Senha
+</div>
+
+@Html.ActionLink("Voltar", "IndexUsuario", "Usuario")
+

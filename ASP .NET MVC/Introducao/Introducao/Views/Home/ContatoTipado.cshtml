@@ -1,0 +1,44 @@
+﻿@model Introducao.Models.PessoaModels
+
+@{
+    ViewBag.Title = "ContatoTipado";
+}
+
+<h2>ContatoTipado</h2>
+
+<br />
+<p>@Model.PessoaId</p>
+<p>@Model.Nome</p>
+<p>@Model.Tipo</p>
+
+@*<form action="ListaContatoTipado" method="post">*@
+@*<form action="ListaContatoFormColletionTipado" method="post">*@
+@*<form action="ListaContatoObjeto" method="post">*@
+    <form action="ListaContatoObjetoReturnObjeto" method="post">
+    <fieldset>
+        <legend>Informações de pessoas</legend>
+    </fieldset>
+    <div>
+        <label for="PessoaId">Código</label>
+    </div>
+    <div>
+        <input type="number" value="@Model.PessoaId" name="PessoaId" />
+    </div>
+    <div>
+        <label for="Nome">Nome</label>
+    </div>
+    <div>
+        <input type="text" value="@Model.Nome" name="Nome" />
+    </div>
+    <div>
+        <label for="Tipo">Tipo</label>
+    </div>
+    <div>
+        <input type="text" value="@Model.Tipo" name="Tipo" />
+    </div>
+
+    <p><input type="submit" value="Enviar" /></p>
+
+
+</form>
+

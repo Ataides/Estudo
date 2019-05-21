@@ -1,0 +1,42 @@
+﻿@model Introducao.Models.PessoaModels
+
+@{
+    ViewBag.Title = "ContatoTipadoHtmlForm";
+}
+
+<h2>ContatoTipadoHtmlForm</h2>
+
+<br />
+<p>@Model.PessoaId</p>
+<p>@Model.Nome</p>
+<p>@Model.Tipo</p>
+
+@using (Html.BeginForm("ListaContatoObjetoReturnObjeto", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Informações de pessoas</legend>
+    </fieldset>
+    <div>
+        @Html.LabelFor(x => x.PessoaId)
+    </div>
+    <div>
+        @Html.EditorFor(x => x.PessoaId)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Nome)
+    </div>
+    <div>
+        @Html.EditorFor(x => x.Nome)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Tipo)
+    </div>
+    <div>
+        @Html.EditorFor(x => x.Tipo)
+    </div>
+
+    <p><input type="submit" value="Enviar" /></p>
+
+}
+
+@Html.ActionLink("Voltar", "Index", "Home")
