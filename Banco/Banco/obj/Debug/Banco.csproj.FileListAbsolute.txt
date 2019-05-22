@@ -1,0 +1,10 @@
+C:\Ataides\Pague Menos\CursoCSharp\Banco\Banco\bin\Debug\Banco.exe.config
+C:\Ataides\Pague Menos\CursoCSharp\Banco\Banco\bin\Debug\Banco.exe
+C:\Ataides\Pague Menos\CursoCSharp\Banco\Banco\bin\Debug\Banco.pdb
+C:\Ataides\Pague Menos\CursoCSharp\Banco\Banco\obj\Debug\Banco.csprojResolveAssemblyReference.cache
+C:\Ataides\Pague Menos\CursoCSharp\Banco\Banco\obj\Debug\Banco.Form1.resources
+C:\Ataides\Pague Menos\CursoCSharp\Banco\Banco\obj\Debug\Banco.Properties.Resources.resources
+C:\Ataides\Pague Menos\CursoCSharp\Banco\Banco\obj\Debug\Banco.csproj.GenerateResource.Cache
+C:\Ataides\Pague Menos\CursoCSharp\Banco\Banco\obj\Debug\Banco.exe
+C:\Ataides\Pague Menos\CursoCSharp\Banco\Banco\obj\Debug\Banco.pdb
+C:\Ataides\Pague Menos\CursoCSharp\Banco\Banco\obj\Debug\Banco.FormCadastroConta.resources
