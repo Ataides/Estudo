@@ -1,0 +1,6 @@
+C:\Ataides\Pague Menos\TDD\UnitTestRomano\UnitTestRomano\bin\Debug\UnitTestRomano.dll
+C:\Ataides\Pague Menos\TDD\UnitTestRomano\UnitTestRomano\bin\Debug\UnitTestRomano.pdb
+C:\Ataides\Pague Menos\TDD\UnitTestRomano\UnitTestRomano\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Ataides\Pague Menos\TDD\UnitTestRomano\UnitTestRomano\obj\Debug\UnitTestRomano.dll
+C:\Ataides\Pague Menos\TDD\UnitTestRomano\UnitTestRomano\obj\Debug\UnitTestRomano.pdb
+C:\Ataides\Pague Menos\TDD\UnitTestRomano\UnitTestRomano\obj\Debug\UnitTestRomano.csprojResolveAssemblyReference.cache

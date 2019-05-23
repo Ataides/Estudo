@@ -1,0 +1,12 @@
+C:\Users\75282\documents\visual studio 2015\Projects\TesteUnitarioAutomatico\TesteUnitarioAutomatico\bin\Debug\TesteUnitarioAutomatico.exe.config
+C:\Users\75282\documents\visual studio 2015\Projects\TesteUnitarioAutomatico\TesteUnitarioAutomatico\bin\Debug\TesteUnitarioAutomatico.exe
+C:\Users\75282\documents\visual studio 2015\Projects\TesteUnitarioAutomatico\TesteUnitarioAutomatico\bin\Debug\TesteUnitarioAutomatico.pdb
+C:\Users\75282\documents\visual studio 2015\Projects\TesteUnitarioAutomatico\TesteUnitarioAutomatico\obj\Debug\TesteUnitarioAutomatico.csprojResolveAssemblyReference.cache
+C:\Users\75282\documents\visual studio 2015\Projects\TesteUnitarioAutomatico\TesteUnitarioAutomatico\obj\Debug\TesteUnitarioAutomatico.exe
+C:\Users\75282\documents\visual studio 2015\Projects\TesteUnitarioAutomatico\TesteUnitarioAutomatico\obj\Debug\TesteUnitarioAutomatico.pdb
+C:\Ataides\Pague Menos\TDD\TesteUnitarioAutomatico\TesteUnitarioAutomatico\bin\Debug\TesteUnitarioAutomatico.exe.config
+C:\Ataides\Pague Menos\TDD\TesteUnitarioAutomatico\TesteUnitarioAutomatico\obj\Debug\TesteUnitarioAutomatico.pdb
+C:\Ataides\Pague Menos\TDD\TesteUnitarioAutomatico\TesteUnitarioAutomatico\bin\Debug\TesteUnitarioAutomatico.exe
+C:\Ataides\Pague Menos\TDD\TesteUnitarioAutomatico\TesteUnitarioAutomatico\bin\Debug\TesteUnitarioAutomatico.pdb
+C:\Ataides\Pague Menos\TDD\TesteUnitarioAutomatico\TesteUnitarioAutomatico\obj\Debug\TesteUnitarioAutomatico.csprojResolveAssemblyReference.cache
+C:\Ataides\Pague Menos\TDD\TesteUnitarioAutomatico\TesteUnitarioAutomatico\obj\Debug\TesteUnitarioAutomatico.exe
