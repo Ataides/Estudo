@@ -1,7 +1,0 @@
-C:\Ataides\Pague Menos\CursoCSharp\ConsoleTestes\ConsoleTestes\ConsoleTestes\bin\Debug\ConsoleTestes.exe.config
-C:\Ataides\Pague Menos\CursoCSharp\ConsoleTestes\ConsoleTestes\ConsoleTestes\obj\Debug\ConsoleTestes.csprojResolveAssemblyReference.cache
-C:\Ataides\Pague Menos\CursoCSharp\ConsoleTestes\ConsoleTestes\ConsoleTestes\bin\Debug\ConsoleTestes.exe
-C:\Ataides\Pague Menos\CursoCSharp\ConsoleTestes\ConsoleTestes\ConsoleTestes\bin\Debug\ConsoleTestes.pdb
-C:\Ataides\Pague Menos\CursoCSharp\ConsoleTestes\ConsoleTestes\ConsoleTestes\obj\Debug\ConsoleTestes.exe
-C:\Ataides\Pague Menos\CursoCSharp\ConsoleTestes\ConsoleTestes\ConsoleTestes\obj\Debug\ConsoleTestes.pdb
-C:\Ataides\Pague Menos\CursoCSharp\ConsoleTestes\ConsoleTestes\ConsoleTestes\bin\Debug\ConsoleTestesLINQ.exe.config
