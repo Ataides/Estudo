@@ -46,6 +46,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnNovaConta = new System.Windows.Forms.Button();
             this.BotaoImposto = new System.Windows.Forms.Button();
+            this.btnTotContas = new System.Windows.Forms.Button();
+            this.Linq = new System.Windows.Forms.Button();
+            this.Exception = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -211,11 +214,44 @@
             this.BotaoImposto.UseVisualStyleBackColor = true;
             this.BotaoImposto.Click += new System.EventHandler(this.BotaoImposto_Click);
             // 
+            // btnTotContas
+            // 
+            this.btnTotContas.Location = new System.Drawing.Point(92, 352);
+            this.btnTotContas.Name = "btnTotContas";
+            this.btnTotContas.Size = new System.Drawing.Size(75, 23);
+            this.btnTotContas.TabIndex = 14;
+            this.btnTotContas.Text = "Total contas";
+            this.btnTotContas.UseVisualStyleBackColor = true;
+            this.btnTotContas.Click += new System.EventHandler(this.btnTotContas_Click);
+            // 
+            // Linq
+            // 
+            this.Linq.Location = new System.Drawing.Point(11, 294);
+            this.Linq.Name = "Linq";
+            this.Linq.Size = new System.Drawing.Size(75, 23);
+            this.Linq.TabIndex = 15;
+            this.Linq.Text = "Linq";
+            this.Linq.UseVisualStyleBackColor = true;
+            this.Linq.Click += new System.EventHandler(this.Linq_Click);
+            // 
+            // Exception
+            // 
+            this.Exception.Location = new System.Drawing.Point(11, 323);
+            this.Exception.Name = "Exception";
+            this.Exception.Size = new System.Drawing.Size(75, 23);
+            this.Exception.TabIndex = 16;
+            this.Exception.Text = "Exception";
+            this.Exception.UseVisualStyleBackColor = true;
+            this.Exception.Click += new System.EventHandler(this.Exception_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 404);
+            this.Controls.Add(this.Exception);
+            this.Controls.Add(this.Linq);
+            this.Controls.Add(this.btnTotContas);
             this.Controls.Add(this.BotaoImposto);
             this.Controls.Add(this.btnNovaConta);
             this.Controls.Add(this.groupBox1);
@@ -259,6 +295,9 @@
         private System.Windows.Forms.ComboBox comboContas;
         private System.Windows.Forms.Button btnNovaConta;
         private System.Windows.Forms.Button BotaoImposto;
+        private System.Windows.Forms.Button btnTotContas;
+        private System.Windows.Forms.Button Linq;
+        private System.Windows.Forms.Button Exception;
     }
 }
 

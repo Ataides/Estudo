@@ -1,13 +1,6 @@
-﻿using Banco;
-using Banco.Interface;
+﻿using Banco.Interface;
+using Estudo.Banco.Contas;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Banco
@@ -91,10 +84,19 @@ namespace Banco
             // e depois precisamos ler a posição correta do array.
             Conta selecionada = this.contas[indice];
             double valor = Convert.ToDouble(textoSaldo.Text);
-            selecionada.Deposita(Convert.ToInt32(textoValor.Text));
-            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
-            //textoValor.Text = "";
-            comboContas.SelectedIndex = -1;
+
+            try
+            {
+                selecionada.Deposita(Convert.ToInt32(textoValor.Text));
+                textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+                //textoValor.Text = "";
+                comboContas.SelectedIndex = -1;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Não é possível depositar um valor menor ou igual a zero!");
+            }
+            
         }
 
         private void Saque_Click(object sender, EventArgs e)
@@ -104,9 +106,22 @@ namespace Banco
             // e depois precisamos ler a posição correta do array.
             Conta selecionada = this.contas[indice];
             double valor = Convert.ToDouble(textoSaldo.Text);
-            selecionada.Saca(Convert.ToInt32(textoValor.Text));
-            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
-            textoValor.Text = "";
+
+            try
+            {
+                selecionada.Saca(Convert.ToInt32(textoValor.Text));
+                textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+                textoValor.Text = "";
+                MessageBox.Show("Saque realizado com sucesso");
+            }
+            catch (SaldoInsuficienteException esi)
+            {
+                MessageBox.Show(esi.Message);                
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Não é possível sacar um valor negativo");
+            } 
         }
 
         private void Totaliza_Click(object sender, EventArgs e)
@@ -197,6 +212,33 @@ namespace Banco
             {
                 totalizador.Acumula(sv);
                 MessageBox.Show("Total: " + totalizador.Total);
+            }
+        }
+
+        private void btnTotContas_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Total: " + ContaCorrente.ProximaConta());
+        }
+
+        private void Linq_Click(object sender, EventArgs e)
+        {
+            IntroToLINQ.ExecutaLINQ();
+        }
+
+        private void Exception_Click(object sender, EventArgs e)
+        {
+            int x = 0;
+            try
+            {
+                int y = 100 / x;
+            }
+            catch (ArithmeticException ex)
+            {
+                Console.WriteLine("ArithmeticException Handler: {0}", e.ToString());
+            }
+            catch (Exception exx)
+            {
+                Console.WriteLine("Generic Exception Handler: {0}", e.ToString());
             }
         }
     }

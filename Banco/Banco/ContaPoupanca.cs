@@ -1,11 +1,8 @@
-﻿using Banco.Interface;
+﻿using Banco;
+using Banco.Interface;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Banco
+namespace Estudo.Banco.Contas
 {
     public class ContaPoupanca : Conta, ITributavel
     {
@@ -18,7 +15,18 @@ namespace Banco
 
         public override void Saca(double valorOperacao)
         {
-            MovimentaSaldo((valorOperacao + 0.10) * -1);
+            if (valorOperacao < 0.0)
+            {
+                throw new SaldoInsuficienteException();
+            }
+            if (valorOperacao + 0.10 > this.Saldo)
+            {
+                throw new Exception("Valor do saque maior que o saldo");
+            }
+            else
+            {
+                MovimentaSaldo((valorOperacao + 0.10) * -1);
+            }
         }
 
         public void CalculaRendimento()

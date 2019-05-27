@@ -64,8 +64,10 @@
       <DependentUpon>FormCadastroConta.cs</DependentUpon>
     </Compile>
     <Compile Include="Interface\ITributavel.cs" />
+    <Compile Include="IntroToLINQ.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaldoInsuficienteException.cs" />
     <Compile Include="SeguroVida.cs" />
     <Compile Include="TotalizadorDeContas.cs" />
     <Compile Include="TotalizadorDeTributos.cs" />

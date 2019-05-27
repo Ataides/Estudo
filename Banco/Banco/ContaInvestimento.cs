@@ -1,7 +1,8 @@
-﻿using Banco.Interface;
+﻿using Banco;
+using Banco.Interface;
 using System;
 
-namespace Banco
+namespace Estudo.Banco.Contas
 {
     public class ContaInvestimento : Conta, ITributavel
     {
