@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -111,9 +112,25 @@ namespace Ecommerce.Controllers
         {
             Departaments departaments = db.Departaments.Find(id);
             db.Departaments.Remove(departaments);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                db.SaveChanges();
+                return RedirectToAction("Index");
         }
+            catch (DbUpdateException ex)
+            {
+                if (ex.InnerException.Message.Contains("REFERENCE")){
+                    ModelState.AddModelError(string.Empty, "Não é possível excluir departamentos que possuam cidades relacionadas!");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, ex.InnerException.Message);
+                }
+                throw;
+            }
+
+
+}
 
         protected override void Dispose(bool disposing)
         {
