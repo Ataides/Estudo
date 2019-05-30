@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -51,7 +52,23 @@ namespace Ecommerce.Controllers
             if (ModelState.IsValid)
             {
                 db.Departaments.Add(departaments);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbUpdateException ex)
+                {
+                    if (ex.InnerException.InnerException.Message.Contains("Departament_Name_Index"))
+                    {
+                        ModelState.AddModelError(string.Empty, "Não é possível incluir mais de um departamento com o mesmo nome!");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, ex.InnerException.InnerException.Message);
+                    }
+                    return View(departaments);
+                }
+                
                 return RedirectToAction("Index");
             }
 
@@ -111,9 +128,25 @@ namespace Ecommerce.Controllers
         {
             Departaments departaments = db.Departaments.Find(id);
             db.Departaments.Remove(departaments);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                db.SaveChanges();
+                return RedirectToAction("Index");
         }
+            catch (DbUpdateException ex)
+            {
+                if (ex.InnerException.InnerException.Message.Contains("REFERENCE")){
+                    ModelState.AddModelError(string.Empty, "Não é possível excluir departamentos que possuam cidades relacionadas!");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, ex.InnerException.Message);
+                }
+                return View(departaments);
+            }
+
+
+}
 
         protected override void Dispose(bool disposing)
         {
