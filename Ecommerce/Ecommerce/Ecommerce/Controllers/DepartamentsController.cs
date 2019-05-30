@@ -52,7 +52,23 @@ namespace Ecommerce.Controllers
             if (ModelState.IsValid)
             {
                 db.Departaments.Add(departaments);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbUpdateException ex)
+                {
+                    if (ex.InnerException.InnerException.Message.Contains("Departament_Name_Index"))
+                    {
+                        ModelState.AddModelError(string.Empty, "Não é possível incluir mais de um departamento com o mesmo nome!");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, ex.InnerException.InnerException.Message);
+                    }
+                    return View(departaments);
+                }
+                
                 return RedirectToAction("Index");
             }
 
@@ -119,14 +135,14 @@ namespace Ecommerce.Controllers
         }
             catch (DbUpdateException ex)
             {
-                if (ex.InnerException.Message.Contains("REFERENCE")){
+                if (ex.InnerException.InnerException.Message.Contains("REFERENCE")){
                     ModelState.AddModelError(string.Empty, "Não é possível excluir departamentos que possuam cidades relacionadas!");
                 }
                 else
                 {
                     ModelState.AddModelError(string.Empty, ex.InnerException.Message);
                 }
-                throw;
+                return View(departaments);
             }
 
 
