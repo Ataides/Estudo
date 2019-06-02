@@ -100,8 +100,23 @@ namespace Ecommerce.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(departaments).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbUpdateException ex)
+                {
+                    if (ex.InnerException.InnerException.Message.Contains("Departament_Name_Index"))
+                    {
+                        ModelState.AddModelError(string.Empty, "Não será possível alterar o nome do departamento para um nome que já exista!");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, ex.InnerException.Message);
+                    }
+                }
+                
+                return View(departaments);
             }
             return View(departaments);
         }
