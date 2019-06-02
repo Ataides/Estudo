@@ -20,8 +20,20 @@ namespace Ecommerce.Classes
             });
 
             return dep.OrderBy(x => x.DepartamentsId).ToList();
-        }    
+        }
 
+        public static List<City> GetCities()
+        {
+            List<City> dep = db.Cities.ToList();
+            dep.Add(new City
+            {
+                CityId = 0,
+                Nome = "Informe uma cidade"
+            });
+
+            return dep.OrderBy(x => x.CityId).ToList();
+        }
+                
         public void Dispose()
         {
             db.Dispose();

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Ecommerce.Classes;
 using Ecommerce.Models;
 
 namespace Ecommerce.Controllers
@@ -13,6 +14,14 @@ namespace Ecommerce.Controllers
     public class CompaniesController : Controller
     {
         private EcommerceContext db = new EcommerceContext();
+
+        //Combo cidade em cascata
+        public JsonResult GetCities(int departmentId)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var cities = db.Cities.Where(m => m.DepartamentsId == departmentId).ToList();
+            return Json(cities);
+        }
 
         // GET: Companies
         public ActionResult Index()
@@ -39,8 +48,8 @@ namespace Ecommerce.Controllers
         // GET: Companies/Create
         public ActionResult Create()
         {
-            ViewBag.CityId = new SelectList(db.Cities, "CityId", "Nome");
-            ViewBag.DepartamentsId = new SelectList(db.Departaments, "DepartamentsId", "Nome");
+            ViewBag.CityId = new SelectList(CombosHelper.GetCities(), "CityId", "Nome");
+            ViewBag.DepartamentsId = new SelectList(CombosHelper.GetDepartaments(), "DepartamentsId", "Nome");
             return View();
         }
 
@@ -58,8 +67,8 @@ namespace Ecommerce.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CityId = new SelectList(db.Cities, "CityId", "Nome", company.CityId);
-            ViewBag.DepartamentsId = new SelectList(db.Departaments, "DepartamentsId", "Nome", company.DepartamentsId);
+            ViewBag.CityId = new SelectList(CombosHelper.GetCities(), "CityId", "Nome", company.CityId);
+            ViewBag.DepartamentsId = new SelectList(CombosHelper.GetDepartaments(), "DepartamentsId", "Nome", company.DepartamentsId);
             return View(company);
         }
 
@@ -75,8 +84,8 @@ namespace Ecommerce.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CityId = new SelectList(db.Cities, "CityId", "Nome", company.CityId);
-            ViewBag.DepartamentsId = new SelectList(db.Departaments, "DepartamentsId", "Nome", company.DepartamentsId);
+            ViewBag.CityId = new SelectList(CombosHelper.GetCities(), "CityId", "Nome", company.CityId);
+            ViewBag.DepartamentsId = new SelectList(CombosHelper.GetDepartaments(), "DepartamentsId", "Nome", company.DepartamentsId);
             return View(company);
         }
 
@@ -93,8 +102,8 @@ namespace Ecommerce.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CityId = new SelectList(db.Cities, "CityId", "Nome", company.CityId);
-            ViewBag.DepartamentsId = new SelectList(db.Departaments, "DepartamentsId", "Nome", company.DepartamentsId);
+            ViewBag.CityId = new SelectList(CombosHelper.GetCities(), "CityId", "Nome", company.CityId);
+            ViewBag.DepartamentsId = new SelectList(CombosHelper.GetDepartaments(), "DepartamentsId", "Nome", company.DepartamentsId);
             return View(company);
         }
 
