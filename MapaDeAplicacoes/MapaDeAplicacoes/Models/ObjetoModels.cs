@@ -24,7 +24,8 @@ namespace MapaDeAplicacoes.Models
         [DataType(DataType.DateTime)]
         public DateTime DataCriacaoObjeto { get; set; }
 
-        //public virtual ICollection<TecnologiaModels> Tecnologias { get; set; }
+        public virtual ICollection<ObjetoTecnologiaModels> ObjetoTecnologias { get; set; }
+        public virtual ICollection<RepositorioObjetoModels> RepositorioObjeto { get; set; }
 
     }
 }

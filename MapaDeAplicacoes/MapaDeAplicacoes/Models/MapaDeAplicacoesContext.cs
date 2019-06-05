@@ -14,6 +14,8 @@ namespace MapaDeAplicacoes.Models
 
         }
 
+        //add-migration ColumnFirstName
+        //update-database
         //DESABILITAR CASCATAS
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -26,6 +28,6 @@ namespace MapaDeAplicacoes.Models
 
         public System.Data.Entity.DbSet<MapaDeAplicacoes.Models.ObjetoModels> ObjetoModels { get; set; }
 
-        //public System.Data.Entity.DbSet<MapaDeAplicacoes.Models.ObjetoTecnologiasModels> ObjetoTecnologiasModels { get; set; }
+        public System.Data.Entity.DbSet<MapaDeAplicacoes.Models.ObjetoTecnologiaModels> ObjetoTecnologiasModels { get; set; }
     }
 }

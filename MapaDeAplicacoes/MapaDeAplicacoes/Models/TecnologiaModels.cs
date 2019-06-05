@@ -14,7 +14,7 @@ namespace MapaDeAplicacoes.Models
         [MaxLength(100, ErrorMessage = "Campo com no máximo 50 caracteres!"), MinLength(1, ErrorMessage = "Campo com no mínimo 1 caracteres!")]
         public string Nome { get; set; }
 
-        //public virtual ICollection<ObjetoModels> Objeto { get; set; }
+        public virtual ICollection<ObjetoTecnologiaModels> ObjetoTecnologias { get; set; }
 
     }
 }
