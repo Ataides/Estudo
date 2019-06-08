@@ -41,6 +41,9 @@ namespace Ecommerce.Models
         [Display(Name = "Código departamento")]
         public int DepartamentsId { get; set; }
 
+        [NotMapped]
+        public HttpPostedFileBase LogFile { get; set; }
+
         public virtual City City { get; set; }
         public virtual Departaments Departaments { get; set; }
     }
