@@ -3,6 +3,7 @@ using MapaAplicacao.Classe.app;
 using MapaDeAplicacoes.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,34 +14,44 @@ namespace MapaAplicacao
     {
         static void Main(string[] args)
         {
-            //IncluirRepositorio();
-            EditarRepositorio();
+            IncluirRepositorio();
+            //EditarRepositorio();
             //IncluirTecnologia();
            // IncluirObjeto();
         }
 
         private static void EditarRepositorio()
         {
-            RepositorioApp repositorioApp = new RepositorioApp();
-            ObjetoApp objetoApp = new ObjetoApp();
-            RepositorioModels repositorio = repositorioApp.Listar(1);
-
-            //RepositorioObjetoModels repositorioObjetoModels = new RepositorioObjetoModels();
-            //repositorioObjetoModels.Objeto = objetoApp.Listar(2);
-            //repositorioObjetoModels.Repositorio = repositorio;
-            //repositorio.RepositorioObjeto.Add(repositorioObjetoModels);
-            //repositorioApp.Alterar();
-
+            
         }
 
         private static void IncluirRepositorio()
         {
-            RepositorioApp repositorioApp = new RepositorioApp();           
+            RepositorioApp repositorioApp = new RepositorioApp();
             RepositorioModels repositorio = new RepositorioModels();
+            repositorio.Descricao = "Sistema entrada mercadoria";
 
-            repositorio.Descricao = "Sistema de comrpas";
-            repositorio.Nome = "COM_CsmCompras_VBNET";
-            repositorio.DataCriacao = DateTime.Now;
+            repositorio.Objeto = new Collection<ObjetoModels>();
+            
+
+            repositorio.Nome = "RT_Incineracao_VB";
+            ObjetoModels objeto = new ObjetoModels();
+            objeto.ObjetoTecnologias = new Collection<ObjetoTecnologiaModels>();
+            objeto.Nome = "CsmIncineracao.exe";
+            objeto.Descricao = "entrada";
+            objeto.RepositorioModels = repositorio;
+            objeto.DataCriacaoObjeto = DateTime.Now;
+
+            ObjetoModels objeto2 = new ObjetoModels();
+            objeto2.ObjetoTecnologias = new Collection<ObjetoTecnologiaModels>();
+            objeto2.Nome = "Incineracao.dll";
+            objeto2.Descricao = "entrada";
+            objeto2.RepositorioModels = repositorio;
+            objeto2.DataCriacaoObjeto = DateTime.Now;           
+            
+            repositorio.Objeto.Add(objeto);
+            repositorio.Objeto.Add(objeto2);
+
             repositorioApp.Incluir(repositorio);
         }
 
