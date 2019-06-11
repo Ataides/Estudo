@@ -7,15 +7,15 @@ using System.Web;
 
 namespace MapaDeAplicacoes.Models
 {
-    [Table("RepositorioObjeto")]
-    public class RepositorioObjetoModels
-    {
-        [Key]
-        public int RepositorioObjetoId { get; set; }
-        public int ObjetoId { get; set; }
-        public int RepositorioId { get; set; }
-        public virtual ObjetoModels Objeto { get; set; }
-        public virtual RepositorioModels Tecnologia { get; set; }
+    //[Table("RepositorioObjeto")]
+    //public class RepositorioObjetoModels
+    //{
+    //    [Key]
+    //    public int RepositorioObjetoId { get; set; }
+    //    public int ObjetoId { get; set; }
+    //    public int RepositorioId { get; set; }
+    //    public virtual ObjetoModels Objeto { get; set; }
+    //    public virtual RepositorioModels Repositorio { get; set; }
 
-    }
+    //}
 }

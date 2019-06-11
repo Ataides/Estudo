@@ -10,6 +10,9 @@ namespace MapaAplicacao.Classe
         public DbSet<ObjetoModels> ObjetoModels { get; set; }
         public DbSet<ObjetoTecnologiaModels> ObjetoTecnologiasModels { get; set; }
 
+        public DbSet<Department> Departament { get; set; }
+        public DbSet<Course> Course { get; set; }
+
         public MapaAplicacaoContex() : base("DefaultConnection")
         {
 

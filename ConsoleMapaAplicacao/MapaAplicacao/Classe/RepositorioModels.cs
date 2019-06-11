@@ -21,7 +21,7 @@ namespace MapaDeAplicacoes.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime? DataCriacao { get; set; }
 
-        public virtual ICollection<RepositorioObjetoModels> RepositorioObjeto { get; set; }
+        public virtual ICollection<ObjetoModels> Objeto { get; set; }
 
     }
 }
