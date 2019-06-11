@@ -49,6 +49,10 @@
             this.btnTotContas = new System.Windows.Forms.Button();
             this.Linq = new System.Windows.Forms.Button();
             this.Exception = new System.Windows.Forms.Button();
+            this.Equals = new System.Windows.Forms.Button();
+            this.HashSet = new System.Windows.Forms.Button();
+            this.SortedSet = new System.Windows.Forms.Button();
+            this.Dictionary = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -244,11 +248,55 @@
             this.Exception.UseVisualStyleBackColor = true;
             this.Exception.Click += new System.EventHandler(this.Exception_Click);
             // 
+            // Equals
+            // 
+            this.Equals.Location = new System.Drawing.Point(9, 352);
+            this.Equals.Name = "Equals";
+            this.Equals.Size = new System.Drawing.Size(75, 23);
+            this.Equals.TabIndex = 17;
+            this.Equals.Text = "Equals";
+            this.Equals.UseVisualStyleBackColor = true;
+            this.Equals.Click += new System.EventHandler(this.Equals_Click);
+            // 
+            // HashSet
+            // 
+            this.HashSet.Location = new System.Drawing.Point(174, 382);
+            this.HashSet.Name = "HashSet";
+            this.HashSet.Size = new System.Drawing.Size(75, 23);
+            this.HashSet.TabIndex = 18;
+            this.HashSet.Text = "HashSet";
+            this.HashSet.UseVisualStyleBackColor = true;
+            this.HashSet.Click += new System.EventHandler(this.HashSet_Click);
+            // 
+            // SortedSet
+            // 
+            this.SortedSet.Location = new System.Drawing.Point(92, 381);
+            this.SortedSet.Name = "SortedSet";
+            this.SortedSet.Size = new System.Drawing.Size(75, 23);
+            this.SortedSet.TabIndex = 19;
+            this.SortedSet.Text = "SortedSet";
+            this.SortedSet.UseVisualStyleBackColor = true;
+            this.SortedSet.Click += new System.EventHandler(this.SortedSet_Click);
+            // 
+            // Dictionary
+            // 
+            this.Dictionary.Location = new System.Drawing.Point(9, 381);
+            this.Dictionary.Name = "Dictionary";
+            this.Dictionary.Size = new System.Drawing.Size(75, 23);
+            this.Dictionary.TabIndex = 20;
+            this.Dictionary.Text = "Dictionary";
+            this.Dictionary.UseVisualStyleBackColor = true;
+            this.Dictionary.Click += new System.EventHandler(this.Dictionary_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 404);
+            this.ClientSize = new System.Drawing.Size(284, 435);
+            this.Controls.Add(this.Dictionary);
+            this.Controls.Add(this.SortedSet);
+            this.Controls.Add(this.HashSet);
+            this.Controls.Add(this.Equals);
             this.Controls.Add(this.Exception);
             this.Controls.Add(this.Linq);
             this.Controls.Add(this.btnTotContas);
@@ -298,6 +346,10 @@
         private System.Windows.Forms.Button btnTotContas;
         private System.Windows.Forms.Button Linq;
         private System.Windows.Forms.Button Exception;
+        private System.Windows.Forms.Button Equals;
+        private System.Windows.Forms.Button HashSet;
+        private System.Windows.Forms.Button SortedSet;
+        private System.Windows.Forms.Button Dictionary;
     }
 }
 

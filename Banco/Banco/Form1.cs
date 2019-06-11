@@ -1,6 +1,7 @@
 ﻿using Banco.Interface;
 using Estudo.Banco.Contas;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Banco
@@ -240,6 +241,79 @@ namespace Banco
             {
                 Console.WriteLine("Generic Exception Handler: {0}", e.ToString());
             }
+        }
+
+        private void Equals_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Cliente.ComparaClienteExercicio());
+        }
+
+        private void HashSet_Click(object sender, EventArgs e)
+        {
+            HashSet<string> devedores = new HashSet<string>();
+            // Podemos adicionar elementos no conjunto utilizando o método Add
+            devedores.Add("victor");
+            devedores.Add("osni");
+            // Para sabermos o número de elementos adicionados, utilizamos a propriedade
+            // Count do conjunto. Nesse exemplo elementos guardará o valor 2
+            int elementos = devedores.Count;
+            // O conjunto não guarda elementos repetidos, então se tentarmos
+            // adicionar novamente a string "victor", o número de elementos
+            // continua sendo 2
+            devedores.Add("victor");
+            // Para perguntarmos se o conjunto possui um determinado elemento,
+            // utilizamos o método Contains
+            bool contem = devedores.Contains("osni");
+
+            foreach (string devedor in devedores)
+            {
+                MessageBox.Show(devedor);
+            }
+        }
+
+        private void SortedSet_Click(object sender, EventArgs e)
+        {
+            /*A diferença é
+            que no HashSet os elementos são espalhados em categorias e por isso não sabemos qual é a ordem da
+            iteração, já o SortedSet guarda os elementos na ordem crescente
+            */
+            SortedSet<string> devedores = new SortedSet<string>();
+            devedores.Add("Hugo");
+            devedores.Add("Ettore");
+            devedores.Add("Osni");
+            
+            devedores.Add("Alberto");
+            devedores.Add("Victor");
+            devedores.Add("Beto");
+            devedores.Add("Ataides");
+                        
+            // Esse foreach vai mostrar os nomes na seguinte ordem:
+            // Alberto, Ettore, Hugo, Osni e por fim Victor
+            foreach (string nome in devedores)
+            {
+                MessageBox.Show(nome);
+            }
+        }
+
+        private void Dictionary_Click(object sender, EventArgs e)
+        {
+            Dictionary<String, Conta> dicionario = new Dictionary<String, Conta>();
+
+            foreach (var item in contas)
+            {
+                if (item != null)
+                {
+                    dicionario.Add(item.Titular.NomeCliente, item);
+                }else
+                {
+                    break;
+                }
+                
+            }
+
+            Conta busca = dicionario["victor"];
+            MessageBox.Show(busca.Titular.NomeCliente);
+
         }
     }
 }
