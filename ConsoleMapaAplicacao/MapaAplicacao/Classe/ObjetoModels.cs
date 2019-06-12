@@ -1,4 +1,5 @@
-﻿using MapaDeAplicacoes.Models;
+﻿using MapaAplicacao.Classe;
+using MapaDeAplicacoes.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -25,11 +26,15 @@ namespace MapaDeAplicacoes.Models
         public DateTime DataCriacaoObjeto { get; set; }
 
         public int RepositorioId { get; set; }
-
+                
         public RepositorioModels RepositorioModels { get; set; }
 
         public virtual ICollection<ObjetoTecnologiaModels> ObjetoTecnologias { get; set; }
-        
+
+        [Column("SubObjetoId")]
+        public virtual ICollection<ObjetoModels> SubObjetos { get; set; }
+
+        public virtual ICollection<FuncionalidadeModels> Funcionalidades { get; set; }
 
     }
 }

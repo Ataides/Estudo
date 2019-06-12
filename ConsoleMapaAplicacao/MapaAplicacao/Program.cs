@@ -14,10 +14,45 @@ namespace MapaAplicacao
     {
         static void Main(string[] args)
         {
-            IncluirRepositorio();
+            //IncluirRepositorio();
+            IncluirRepositorioMultiObjetos();
+
             //EditarRepositorio();
             //IncluirTecnologia();
            // IncluirObjeto();
+        }
+
+        private static void IncluirRepositorioMultiObjetos()
+        {
+            RepositorioApp repositorioApp = new RepositorioApp();
+            RepositorioModels repositorio = new RepositorioModels();
+            repositorio.Descricao = "Sistema Tabelas basicas";
+
+            repositorio.Objeto = new Collection<ObjetoModels>();
+
+
+            repositorio.Nome = "RT_TabelasBasicas_VB";
+            ObjetoModels objeto = new ObjetoModels();
+            objeto.ObjetoTecnologias = new Collection<ObjetoTecnologiaModels>();
+            objeto.SubObjetos = new Collection<ObjetoModels>();
+
+            objeto.Nome = "CsmTabelasBasicas.exe";
+            objeto.Descricao = "tabelas basicas";
+            objeto.RepositorioModels = repositorio;
+            objeto.DataCriacaoObjeto = DateTime.Now;
+
+            ObjetoModels objeto2 = new ObjetoModels();
+            objeto2.ObjetoTecnologias = new Collection<ObjetoTecnologiaModels>();
+            objeto2.Nome = "TabelasBasicas.dll";
+            objeto2.Descricao = "tabelas basicas dll";
+            objeto2.RepositorioModels = repositorio;
+            objeto2.DataCriacaoObjeto = DateTime.Now;
+
+            objeto.SubObjetos.Add(objeto2);
+
+            repositorio.Objeto.Add(objeto);            
+
+            repositorioApp.Incluir(repositorio);
         }
 
         private static void EditarRepositorio()
@@ -29,23 +64,23 @@ namespace MapaAplicacao
         {
             RepositorioApp repositorioApp = new RepositorioApp();
             RepositorioModels repositorio = new RepositorioModels();
-            repositorio.Descricao = "Sistema entrada mercadoria";
+            repositorio.Descricao = "Sistema devolução mercadoria";
 
             repositorio.Objeto = new Collection<ObjetoModels>();
             
 
-            repositorio.Nome = "RT_Incineracao_VB";
+            repositorio.Nome = "RT_Devolucao_VB";
             ObjetoModels objeto = new ObjetoModels();
             objeto.ObjetoTecnologias = new Collection<ObjetoTecnologiaModels>();
-            objeto.Nome = "CsmIncineracao.exe";
-            objeto.Descricao = "entrada";
+            objeto.Nome = "CsmDevelocao.exe";
+            objeto.Descricao = "devolucao";
             objeto.RepositorioModels = repositorio;
             objeto.DataCriacaoObjeto = DateTime.Now;
 
             ObjetoModels objeto2 = new ObjetoModels();
             objeto2.ObjetoTecnologias = new Collection<ObjetoTecnologiaModels>();
-            objeto2.Nome = "Incineracao.dll";
-            objeto2.Descricao = "entrada";
+            objeto2.Nome = "Devolucao.dll";
+            objeto2.Descricao = "devolucao";
             objeto2.RepositorioModels = repositorio;
             objeto2.DataCriacaoObjeto = DateTime.Now;           
             
